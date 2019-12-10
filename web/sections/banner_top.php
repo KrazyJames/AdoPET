@@ -16,8 +16,10 @@
                     <li>
                         <p>Cambia tu vida y la suya</p>
                     </li>
+                    <li><a class="sign" href="signup.php" data-toggle="modal" data-target="#myModal3"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></li>
                     <li>'.$button.
                    '</li>
+                   
                 </ul>
         </div>
     </div>');

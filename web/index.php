@@ -69,6 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="agileits-banner">
 		<div class="bnr-agileinfo">
 			<?=include('sections/banner_top.php')?>
+			
 			<div class="banner-w3text w3layouts">
 
 				<h2><font color="#ffffff">AdoPET</h2>
@@ -155,8 +156,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3 class="agileinfo_sign">Sign Up</h3>
 						<div class="login-form">
 							<form action="#" method="post">
-								<input type="text" name="name" placeholder="Username" required="">
+								<input type="text" name="name" placeholder="Name" id="">
+								<input type="text" name="username" placeholder="Username" required="">
 								<input type="email" name="email" placeholder="Email" required="">
+								<input type="tel" name="phone" placeholder="Phone">
 								<input type="password" class="password" name="Password" id="password1" placeholder="Password" required="" />
 								<input type="password" class="password" name="Confirm Password" id="password2" placeholder="Confirm Password" required=""
 								/>

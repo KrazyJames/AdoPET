@@ -477,7 +477,7 @@ button.close {
 
 ul.agile_top_section li {
 	display: inline-block;
-	width: 33%;
+	width: 24% !important;
 	text-align: center;
 	list-style: none;
 }
