@@ -19,6 +19,9 @@
             
             //Tell cURL that we want to send a POST request.
             curl_setopt($ch, CURLOPT_POST, 1);
+
+            // Will return the response, if false it print the response
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             
             //Attach our encoded JSON string to the POST fields.
             curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
@@ -27,7 +30,9 @@
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json')); 
             
             //Execute the request
-            $result = curl_exec($ch);
+            if( ! $result = curl_exec($ch)){
+                trigger_error(curl_error($ch));
+            }
             curl_close($ch);
             return $result;
         }
