@@ -1,3 +1,24 @@
+<?php
+	session_start();
+	//print_r($_SESSION);
+	include_once('controllers/usercontroller.php');
+    include_once('modelos/Usuario.php');
+    $controller = new usercontroller();
+	if(isset($_POST['email'])){
+		$result = $controller->login($_POST['email'], $_POST['password']);
+		if($result){
+			echo $result->nombre;
+			$jsonObjArray = json_decode($result);
+			$usuario = new Usuario();
+			$usuario = (object) $jsonObjArray;
+			
+			$_SESSION['usuario'] = $usuario;
+			header('location:index.php');
+		}
+	}
+	
+	
+?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -49,7 +70,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="bnr-agileinfo">
 			<div class="banner-top w3layouts">
 				<div class="container">
-					<ul class="agile_top_section">
+				<ul class="agile_top_section">
 						<li>
 							<div class="logo">
 							<a href=""><img src="images/logo.svg" alt="" width="40%">
@@ -57,7 +78,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<p>Cambia tu vida y la suya</p>
 						</li>
-						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a></li>
+						<li>
+							<?php
+								if(isset($_SESSION['usuario'])){
+									echo '<a class="sign" href="logout.php"><i class="fa fa-sign-in" aria-hidden="true"></i>'.$_SESSION['usuario']->nombre.'</a>';
+								}else{
+									echo '<a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>';
+								}
+							?>
+							
+						</li>
 					</ul>
 				</div>
 			</div>
