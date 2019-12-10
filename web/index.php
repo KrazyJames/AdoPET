@@ -143,7 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<img src="images/profile.svg " width="10%" alt="">
 						<h3 class="agileinfo_sign">Sign In</h3>
 						<div class="login-form">
-							<form action="login.php" method="post">
+							<form action="index.php" method="post">
 								<input type="email" name="email" placeholder="E-mail" required="true">
 								<input type="password" name="password" placeholder="Password" required="true">
 								<div class="tp">

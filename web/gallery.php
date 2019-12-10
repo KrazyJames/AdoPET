@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -50,7 +53,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<p>Cambia tu vida y la suya</p>
 						</li>
-						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>							</li>
+						<li>
+							<?php
+								if(isset($_SESSION['usuario'])){
+									echo '<a class="sign" href="logout.php"><i class="fa fa-sign-in" aria-hidden="true"></i>'.$_SESSION['usuario']->nombre.'</a>';
+								}else{
+									echo '<a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>';
+								}
+							?>
+							
+						</li>
 					</ul>
 				</div>
 			</div>
