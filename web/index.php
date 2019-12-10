@@ -68,29 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- banner -->
 	<div class="agileits-banner">
 		<div class="bnr-agileinfo">
-			<div class="banner-top w3layouts">
-				<div class="container">
-				<ul class="agile_top_section">
-						<li>
-							<div class="logo">
-							<a href=""><img src="images/logo.svg" alt="" width="40%">
-						</li>
-						<li>
-							<p>Cambia tu vida y la suya</p>
-						</li>
-						<li>
-							<?php
-								if(isset($_SESSION['usuario'])){
-									echo '<a class="sign" href="logout.php"><i class="fa fa-sign-in" aria-hidden="true"></i>'.$_SESSION['usuario']->nombre.'</a>';
-								}else{
-									echo '<a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>';
-								}
-							?>
-							
-						</li>
-					</ul>
-				</div>
-			</div>
+			<?=include('sections/banner_top.php')?>
 			<div class="banner-w3text w3layouts">
 
 				<h2><font color="#ffffff">AdoPET</h2>
@@ -114,8 +92,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<div class="w3menu navbar-left">
 							<ul class="nav navbar">
-								<li><a href="gallery.html">Galeria</a></li>
-								<li><a href="contact.html">Contacto</a></li>
+								<li><a href="gallery.php">Galeria</a></li>
+								<li><a href="contact.php">Contacto</a></li>
 							</ul>
 						</div>
 						<div class="w3ls-bnr-icons social-icon navbar-right">
@@ -472,9 +450,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="top-nav bottom-w3lnav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="gallery.html">Galeria</a></li>
-					<li><a href="contact.html">Contacto</a></li>
+					<li><a href="gallery.php">Galeria</a></li>
+					<li><a href="contact.php">Contacto</a></li>
 				</ul>
 			</div>
 			<p>© 2019 Adopet. All Rights Reserved </p>

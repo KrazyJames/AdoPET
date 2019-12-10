@@ -43,29 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- banner -->
 	<div class="agileits-banner about-w3banner">
 		<div class="bnr-agileinfo">
-			<div class="banner-top w3layouts">
-				<div class="container">
-					<ul class="agile_top_section">
-						<li>
-							<div class="logo">
-							<a href=""><img src="images/logo.svg" alt="" width="40%">
-						</li>
-						<li>
-							<p>Cambia tu vida y la suya</p>
-						</li>
-						<li>
-							<?php
-								if(isset($_SESSION['usuario'])){
-									echo '<a class="sign" href="logout.php"><i class="fa fa-sign-in" aria-hidden="true"></i>'.$_SESSION['usuario']->nombre.'</a>';
-								}else{
-									echo '<a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>';
-								}
-							?>
-							
-						</li>
-					</ul>
-				</div>
-			</div>
+			<?=include('sections/banner_top.php')?>
 			<div class="banner-w3text w3layouts">
 
 				<h2>AdoPET</h2>
@@ -86,8 +64,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<div class="w3menu navbar-left">
 							<ul class="nav navbar">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="contact.html">Contacto</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="contact.php">Contacto</a></li>
 							</ul>
 						</div>
 						<div class="w3ls-bnr-icons social-icon navbar-right">
@@ -168,67 +146,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<h3 class="agileits-title">Galeria</h3>
 			<div class="gallery-agileinfo">
-				<div class="col-sm-4 col-xs-6 w3gallery-grids">
-					<a href="images/g1.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g1.jpg" alt="" title="Pets Care Image"/> 
-						<div class="agile-figcaption">
-							<h4>Lucky</h4>
-							<p>
-							  Gato-Hembra-Tranquila-7 meses
-							  </p>
-						</div>
-					</a>
-				</div>
-				<div class="col-sm-4 col-xs-6 w3gallery-grids">
-					<a href="images/g2.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g2.jpg" alt="" title="Pets Care Image"/> 
-						<div class="agile-figcaption">
-						  <h4>Goliath</h4>
-						  <p>Es un perro muy travieso y energetico</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-sm-4 col-xs-6 w3gallery-grids">
-					<a href="images/g3.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g3.jpg" alt="" title="Pets Care Image"/> 
-						<div class="agile-figcaption">
-						  <h4>Pistacho</h4>
-						  <p>Un gato macho de 8 meses muy tranquilo</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-sm-4 col-xs-6 w3gallery-grids">
-					<a href="images/g4.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g4.jpg" alt="" title="Pets Care Image"/> 
-						<div class="agile-figcaption">
-						  <h4>Brayan</h4>
-						   <p>Es un perro mayor que disfruta salir a pasear</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-sm-4 col-xs-6 w3gallery-grids">
-					<a href="images/g5.jpg" class="imghvr-hinge-right figure">
-						<img src="images/g5.jpg" alt="" title="Pets Care Image"/> 
-						<div class="agile-figcaption">
-							<h4>Ginger</h4>
-							<p>
-							  Es una gatita de pelaje naranja con blanco, bastante tranquila,
-							   se deja acariciar y duerme mucho.
-							  </p>
-						</div>
-					</a>
-				</div>
-				<div class="col-sm-4 col-xs-6 w3gallery-grids">
-					<a href="images/img1.jpg" class="imghvr-hinge-right figure">
-						<img src="images/img1.jpg" alt="" title="Pets Care Image"/> 
-						<div class="agile-figcaption">
-						  <h4>Goku</h4>
-						  <p>Es un gatito de 2 meses de edad</p>
-						</div>
-					</a>
-				</div>
-				<div class="clearfix"> </div>
+				<?=include('sections/gallery_agileinfo.php')?>
 
+				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
@@ -255,8 +175,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="top-nav bottom-w3lnav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="contact.html">Contacto</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="contact.php">Contacto</a></li>
 				</ul>
 			</div>
 			<p>© 2019 Adopet. All Rights Reserved </p>

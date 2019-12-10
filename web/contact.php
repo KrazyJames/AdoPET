@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -43,20 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- banner -->
 	<div class="agileits-banner about-w3banner">
 		<div class="bnr-agileinfo">
-			<div class="banner-top w3layouts">
-				<div class="container">
-					<ul class="agile_top_section">
-						<li>
-							<div class="logo">
-							<a href=""><img src="images/logo.svg" alt="" width="40%">
-						</li>
-						<li>
-							<p>Cambia tu vida y la suya</p>
-						</li>
-						<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>							</li>
-					</ul>
-				</div>
-			</div>
+			<?=include('sections/banner_top.php')?>
 			<div class="banner-w3text w3layouts">
 
 
@@ -157,17 +147,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //Modal2 -->
 
+	
+
 	<!-- contact -->
 	<div class="contact">
 		<div class="container">
 			<h3 class="agileits-title">Contactanos</h3>
 			<div class="contact-agileinfo">
 				<div class="col-md-7 contact-right">
-					<form action="#" method="post">
-						<input type="text" name="Name" placeholder="Name" required="">
+					<form action="mail.php" method="post">
+						<input type="text" name="Name" placeholder="Name" required="" <?php if(isset($_SESSION['usuario'])){echo 'value="'.$_SESSION['usuario']->nombre.'"';}?>>
 						<span id="name_validation" class="error_message"></span>
-						<input type="text" class="email" name="Email" placeholder="Email" required="">
-						<input type="text" name="Phone no" placeholder="Phone" required="">
+						<input type="text" class="email" name="Email" placeholder="Email" required="" <?php if(isset($_SESSION['usuario'])){echo 'value="'.$_SESSION['usuario']->correo.'"';}?>>
+						<input type="text" name="Phone no" placeholder="Phone" required="" <?php if(isset($_SESSION['usuario'])){echo 'value="'.$_SESSION['usuario']->telefono.'"';}?>>
 						<textarea name="Message" placeholder="Message" required=""></textarea>
 						<input id="submit_button" type="submit" value="Send" />
 					</form>
@@ -181,11 +173,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="address address-mdl">
 						<h5>Phones:</h5>
 					
-						<p><i class="glyphicon glyphicon-phone"></i> +52 622 1185883</p>
+						<p><i class="glyphicon glyphicon-phone"></i><a href="tel:+526221185883"> +52 622 1185883</a></p>
 					</div>
 					<div class="address">
 						<h5>Email:</h5>
-						<p><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:info@example.com">blancamanzanares9822@gmail.com</a></p>
+						<p><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:blancamanzanares9822@gmail.com">blancamanzanares9822@gmail.com</a></p>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -201,7 +193,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="w3-agilesale welcome">
 		<div class="container">
 			<h3 class="agileits-title two">No compres una mascota, <span>Adopta!</span></h3>
-			<a href="contact.html" class="button button-isi"><span>Contactanos </span><i class="icon glyphicon glyphicon-arrow-right"></i></a>
+			<a href="contact.php" class="button button-isi"><span>Contactanos </span><i class="icon glyphicon glyphicon-arrow-right"></i></a>
 		</div>
 	</div>
 	<!-- //w3-agilesale -->
